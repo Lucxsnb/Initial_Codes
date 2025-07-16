@@ -1,0 +1,16 @@
+email = input().strip()    # Entrada do usuário
+
+# Verificão de e-mails
+if (
+    email.count("@") == 1 and               # verifica se tem exatamente um "@"
+    not email.startswith("@") and           # Verifica se a string começa com"@"
+    not email.endswith("@") and             # Verifica se a string termina com "@"
+    " " not in email                        # Verifica se existem espaços na string
+):
+    usuario, dominio = email.split("@")
+    if "." in dominio and usuario and dominio:
+        print("E-mail válido")
+    else:
+        print("E-mail inválido")
+else:
+    print("E-mail inválido")
